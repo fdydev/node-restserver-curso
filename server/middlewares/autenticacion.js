@@ -32,7 +32,7 @@ let verificaAdminRole = (req, res, next) => {
 
     let usuario = req.usuario;
 
-    if (usuario.role === 'ADMIND_ROLE') {
+    if (usuario.role === 'ADMIN_ROLE') {
         next();
     } else {
 
