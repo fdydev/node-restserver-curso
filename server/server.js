@@ -22,13 +22,14 @@ app.use(require('./routes/index'));
 
 
 
-mongoose.connect(process.env.URLDB, (err, res) => {
+mongoose.connect(process.env.URLDB, { useNewUrlParser: true }, (err, res) => {
 
     if (err) throw err;
 
     console.log('Base de datos ONLINE');
 
 });
+mongoose.set('useCreateIndex', true);
 
 app.listen(process.env.PORT, () => {
     console.log('Escuchando puerto: ', process.env.PORT);
